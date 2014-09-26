@@ -13,6 +13,7 @@ public class Application extends Controller {
     	User u = new User();
     	u.username = "gorans";
     	u.save();
+    	
         renderText("Successfuly created user: "+u.username);
     }
 

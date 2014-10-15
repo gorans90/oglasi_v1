@@ -11,5 +11,21 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+#User routes
+POST	/create-user							UserController.createUser
+PUT		/disable-user							UserController.disableUser
+GET		/get-all-users							UserController.getAllUsers
+GET		/get-active-users						UserController.getActiveUsers
+PUT		/update-user							UserController.updateUser
+
+#Ads routes
+POST	/create-ad								AdsController.createAd
+PUT 	/disable-ad								AdsController.disableAd
+PUT		/update-ad								AdsController.updateAd
+GET		/get-by-id/{id}							AdsController.getById
+GET		/get-all								AdsController.getAllAds
+GET		/get-by-category/{id}					AdsController.getByCategory
+GET		/get-by-subcategory/{id}				AdsController.getBySubCategory
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

@@ -1,25 +1,29 @@
 package controllers;
 
+import java.util.List;
+
 import models.Ads;
 import models.Category;
 import models.Images;
 import models.Subcategory;
 import models.User;
+import play.modules.guice.InjectSupport;
 import play.mvc.Controller;
+import service.UserService;
+import service.impl.UserServiceImpl;
 
+import com.google.inject.Inject;
+
+@InjectSupport
 public class Application extends Controller {
 
+	@Inject
+	protected static UserService userService;
+	
+	
     public static void index() {
-    	User u = new User();
-    	u.username = "gorans";
-    	u.save();
-    	
-    	Category c = new Category();
-    	Subcategory s = new Subcategory();
-    	Ads a = new Ads();
-    	Images i = new Images();
-    	
-        renderText("Successfuly created user: "+u.username);
+    	List<User> users = userService.getAllActiveUser();
+    	render("/Application/test.html", users);
     }
 
 }

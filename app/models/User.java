@@ -35,6 +35,8 @@ public class User extends BaseModelImpl{
 	
 	public String profilePicture;
 	
+	public boolean active;
+	
 	public void setPassword(String password) {
 		this.password = Crypto.encryptAES(password);
 	}

@@ -16,7 +16,7 @@ public class Ads extends BaseModelImpl{
 	@Required
 	public String name;
 	
-	public String decription;
+	public String description;
 	
 	@Required
 	@OneToOne
@@ -34,6 +34,8 @@ public class Ads extends BaseModelImpl{
 	
 	@OneToOne
 	public User createdBy;
+	
+	public boolean active;
 	
 	
 }

@@ -2,3 +2,6 @@
 
 require:
     - play
+    - play -> guice 1.2
+    - org.codehaus.jackson -> jackson-mapper-asl 1.9.2
+    

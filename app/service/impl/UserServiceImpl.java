@@ -1,9 +1,10 @@
 package service.impl;
 
-import java.util.Date;
 import java.util.List;
 
 import models.User;
+import play.libs.Codec;
+import play.libs.Crypto;
 import service.UserService;
 
 public class UserServiceImpl implements UserService{
@@ -57,7 +58,16 @@ public class UserServiceImpl implements UserService{
 		u.save();
 	}
 
-	
+	@Override
+	public User loginUser(String username, String password) {
+		String passwordHash = Crypto.encryptAES(password);
+		User u = User.find("SELECT u FROM User u WHERE u.username = ? AND u.password = ? AND u.active = ?", username, passwordHash, true).first();
+		if(u!=null){
+		return u;
+		}else{
+			return null;
+		}
+	}
 	
 
 }

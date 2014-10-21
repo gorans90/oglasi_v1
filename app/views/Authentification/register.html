@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="@{'/public/stylesheets/css/login.css'}">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-wrapper">
+            
+            <div class="header-logo">
+                <a href="#">
+                    <img src="@{'/public/images/logo.png'}" alt="Routes"/>
+                </a>
+            </div>
+            
+            
+            <div class="header-menu-button">
+                <div class="login_btn"><a href="#">Login |</a></div>
+                <img src="@{'/public/images/settings.png'}" alt="Routes"/>
+            </div>   
+        </div>
+
+        <div class="register-background-div">
+            <div id="login" class="register-login-div">
+                #{form @UserController.createUser()}
+                	#{if flash.error}
+    					<div id = "error">${flash.error}</div>
+					#{/if}
+                    <div class="login-control">
+                        <label>First name </label>
+                        <input class="login-field" type="text" name="firstname">
+                    </div>
+					<div class="login-control">
+                        <label>Last name</label>
+                        <input class="login-field" type="text" name="lastname">
+                    </div>
+					<div class="login-control">
+                        <label>Email</label>
+                        <input class="login-field" type="text" name="email">
+                    </div>
+					<div class="login-control">
+                        <label>Username</label>
+                        <input class="login-field" type="text" name="username">
+                    </div>
+                    <div class="login-control">
+                        <label>Password</label>
+                        <input class="login-field" type="password" name="password">
+                    </div>
+                    <input class="login-submit" type="submit" value="Register"> 
+                #{/form}
+
+            </div>
+        </div>
+             
+    </body>
+</html>
+

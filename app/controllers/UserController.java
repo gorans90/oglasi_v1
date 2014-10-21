@@ -18,7 +18,7 @@ import service.UserService;
 import com.google.inject.Inject;
 
 @InjectSupport
-public class UserController extends Controller{
+public class UserController extends SecureController.Security{
 
 	@Inject
 	protected static UserService userService;
@@ -58,4 +58,32 @@ public class UserController extends Controller{
 		//TODO add some response for frontend
 	}
 	
+	public static void login() {
+		render("Authentification/login.html");
+	}
+
+	/**
+	 * Renders page for registration
+	 */
+	public static void showRegister() {
+//		render("Authentification/register.html");
+	}
+
+	/**
+	 * Checks if user exists
+	 * 
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	static boolean authenticate(String username, String password) {
+		User u = userService.loginUser(username, password);
+		if (u != null) {
+			Logger.debug(u.username + " logged in!");
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

@@ -25,7 +25,7 @@ public class User extends BaseModelImpl{
 	@Required
 	public String mail;
 	
-	public String address;
+	public Address address;
 	
 	public String city;
 	

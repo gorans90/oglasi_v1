@@ -17,6 +17,7 @@ PUT		/disable-user							UserController.disableUser
 GET		/get-all-users							UserController.getAllUsers
 GET		/get-active-users						UserController.getActiveUsers
 PUT		/update-user							UserController.updateUser
+GET  	/login                                  UserController.login
 
 #Ads routes
 POST	/create-ad								AdsController.createAd
@@ -26,6 +27,11 @@ GET		/get-by-id/{id}							AdsController.getById
 GET		/get-all								AdsController.getAllAds
 GET		/get-by-category/{id}					AdsController.getByCategory
 GET		/get-by-subcategory/{id}				AdsController.getBySubCategory
+
+#secure routes
+#GET	  /login								SecureController.login
+#POST     /login            					SecureController.authenticate
+GET      /logout                                SecureController.logout
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

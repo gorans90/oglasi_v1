@@ -16,4 +16,6 @@ public interface UserService {
 	public void disableUser(Long id);
 	
 	public void updateUser(User user);
+	
+	public User loginUser(String username, String password);
 }

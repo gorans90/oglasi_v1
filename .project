@@ -15,9 +15,7 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
-	<linkedResources><link><name>guice-1.2</name><type>2</type><location>C:/Projekti/Oglasi_v1/Oglasi_dev/modules/guice-1.2/app</location></link>
-<link><name>conf/guice-1.2</name><type>2</type><location>C:/Projekti/Oglasi_v1/Oglasi_dev/modules/guice-1.2/conf</location></link>
-<link><name>guice</name><type>2</type><location>C:/Users/simic_000/Documents/play-1.2.4/modules/guice/app</location></link>
-<link><name>conf/guice</name><type>2</type><location>C:/Users/simic_000/Documents/play-1.2.4/modules/guice/conf</location></link>
+	<linkedResources><link><name>guice-1.2</name><type>2</type><location>D:/Programming/Git Hub/oglasi_v1/modules/guice-1.2/app</location></link>
+<link><name>conf/guice-1.2</name><type>2</type><location>D:/Programming/Git Hub/oglasi_v1/modules/guice-1.2/conf</location></link>
 </linkedResources>
 </projectDescription>

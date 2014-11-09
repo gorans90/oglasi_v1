@@ -2,6 +2,17 @@
 
 require:
     - play
-    - play -> guice 1.2
+    - providedmodule -> guice 1.2
     - org.codehaus.jackson -> jackson-mapper-asl 1.9.2
     
+repositories:
+    - provided:
+            type: local
+            artifact:   "${application.path}/jar/[module]-[revision].jar"
+            contains:
+            - provided -> *  
+    - providedmodules:
+            type: local  
+            artifact:   "${application.path}/mod/[module]-[revision].zip"
+            contains:
+            - providedmodule -> *
